@@ -49,10 +49,10 @@ export async function GET() {
       >
         <header tw="flex text-[36px] w-full">
           <div tw="font-bold" style={font("Inter 600")}>
-            Mintu Gogoi
+            Gmin
           </div>
           <div tw="grow" />
-          <div tw="text-[28px]">Mintu's Blog</div>
+          <div tw="text-[28px]">gmin.blog.in</div>
         </header>
 
         <main tw="flex mt-10 flex-col w-full" style={font("Roboto Mono 400")}>
