@@ -73,10 +73,10 @@ export async function GET(_req: Request, props) {
       >
         <header tw="flex text-[36px] w-full">
           <div tw="font-bold" style={font("Inter 600")}>
-            Shubham Singh
+            Mintu Gogoi
           </div>
           <div tw="grow" />
-          <div tw="text-[28px]">blog.shubh.sh</div>
+          <div tw="text-[28px]">gmin.blog</div>
         </header>
 
         <main tw="flex grow pb-3 flex-col items-center justify-center">

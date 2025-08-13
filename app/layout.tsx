@@ -15,8 +15,8 @@ export const metadata = {
   openGraph: {
     title: "Mintu's blog",
     description: "Hi I am Mintu Gogoi, welcome to my blog.",
-    url: "https://gmin.blog.in",
-    siteName: "Mintu's blog",
+    url: "https://gmin.blog",
+    siteName: "Gmin",
     images: ["/opengraph-image"],
   },
   twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
     site: "@Min2__gg",
     creator: "@Min2__gg",
   },
-  metadataBase: new URL("https://gmin.blog.in"),
+  metadataBase: new URL("https://gmin.blog"),
 };
 
 export const viewport = {

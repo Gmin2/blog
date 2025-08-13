@@ -52,7 +52,7 @@ export async function GET() {
             Gmin
           </div>
           <div tw="grow" />
-          <div tw="text-[28px]">gmin.blog.in</div>
+          <div tw="text-[28px]">gmin.blog</div>
         </header>
 
         <main tw="flex mt-10 flex-col w-full" style={font("Roboto Mono 400")}>
