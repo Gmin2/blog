@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@import "highlight.js/styles/atom-one-dark.css";
+
+@theme {
+  --font-family-mono: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", monospace;
+  
+  --color-terminal-bg: #1a1a1a;
+  --color-terminal-fg: #e0e0e0;
+  --color-terminal-muted: #888888;
+  --color-terminal-border: #333333;
+  --color-terminal-hover: #2a2a2a;
+  --color-terminal-accent: #ffffff;
+}
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+  
+  body {
+    @apply bg-terminal-bg text-terminal-fg font-mono text-sm leading-relaxed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    @apply text-terminal-fg no-underline transition-colors duration-200;
+  }
+  
+  a:hover {
+    @apply text-terminal-accent;
+  }
+}
+
+/* Code block styling */
+.blog-content pre {
+  background-color: var(--color-terminal-hover) !important;
+  border: 1px solid var(--color-terminal-border);
+  border-radius: 4px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+.blog-content code {
+  font-family: var(--font-family-mono);
+  font-size: 13px;
+}
+
+.blog-content pre code {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.blog-content :not(pre) > code {
+  background-color: var(--color-terminal-hover);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--color-terminal-border);
+}
