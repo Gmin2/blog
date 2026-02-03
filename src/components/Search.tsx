@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
-import { Search as SearchIcon, X } from 'lucide-react';
+import { Search as SearchIcon } from 'lucide-react';
 import { blogPosts } from '../data/blogData';
 
 interface SearchProps {

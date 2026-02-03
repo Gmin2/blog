@@ -1,7 +1,6 @@
 import { Routes, Route, useParams } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import About from "./components/About";
-import Projects from "./components/Projects";
 import { BlogList } from "./components/BlogList";
 import { BlogPostDetail } from "./components/BlogPostDetail";
 import { getBlogPostById } from "./data/blogData";
