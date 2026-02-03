@@ -12,7 +12,7 @@ There is no shortage of articles explaining smart contract vulnerabilities. Reen
 
 And then deploy a contract with the exact same mistake.
 
-Reading about vulnerabilities does not build intuition. Exploiting them does.
+> Reading about vulnerabilities does not build intuition. Exploiting them does.
 
 ## Why This Exists
 
@@ -20,7 +20,7 @@ Ethereum has [ethernaut](https://ethernaut.openzeppelin.com/). A series of incre
 
 The Polkadot ecosystem has nothing like this for ink! contracts. And ink! is different enough from Solidity that the security model diverges in meaningful ways. The storage layout is different. The execution model is different. Cross-contract calls work differently. You cannot simply port Ethernaut's lessons and call it done.
 
-So we built [ink!CTF](https://ctfs.ink) — a Capture-The-Flag platform for ink! smart contract security on Paseo Asset Hub testnet. You connect a wallet. You get a personal contract instance. You study the source code. You open your browser console. And you break it.
+So we built [ink!CTF](https://ctfs.ink) — a Capture-The-Flag platform for ink! smart contract security on Paseo PassetHub testnet. You connect a wallet. You get a personal contract instance. You study the source code. You open your browser console. And you break it.
 
 ## The Levels
 
@@ -60,4 +60,4 @@ We would rather you learn this by draining a testnet contract than by losing fun
 
 ---
 
-> [ink!CTF](https://ctfs.ink) is live on Paseo Asset Hub testnet. Connect a wallet, get some PAS from the faucet, and start breaking things.
+> [ink!CTF](https://ctfs.ink) is live on Paseo PassetHub testnet. Connect a wallet, get some PAS from the faucet, and start breaking things.

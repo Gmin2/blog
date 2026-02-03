@@ -51,6 +51,9 @@ export function BlogPostDetail({ post }: BlogPostDetailProps) {
               </CodeBlock>
             );
           },
+          img: ({ node, ...props }) => (
+            <img className="rounded-lg mt-7 w-full" loading="lazy" {...props} />
+          ),
           hr: ({ node, ...props }) => <hr className="my-14 w-24 border-rurikon-border" {...props} />,
         }}
       >
