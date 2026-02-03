@@ -40,11 +40,13 @@ Six levels, each isolating a vulnerability class that has cost real money on rea
 
 ## How You Play
 
-![Console Gameplay](/images/inkctf-console.png)
+![alt text](./images/inkctf-game.png)
 
 Connect a Polkadot wallet. Get some PAS from the testnet faucet. Pick a level.
 
 Each level gives you the full contract source code and deploys a personal instance just for you. The browser console is your weapon — the platform injects helper functions so you can call contract methods, send transactions, and inspect state directly from devtools.
+
+![Console Gameplay](/images/inkctf-console.png)
 
 When you think you have exploited the contract, submit your instance. The validation is on-chain. Either you broke the contract or you did not. No self-reported completions.
 
