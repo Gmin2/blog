@@ -15,34 +15,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    "id": "getting-started-with-modern-web-development",
-    "title": "Getting Started with Modern Web Development",
-    "excerpt": "Explore the fundamentals of modern web development and learn how to build scalable applications with the latest technologies.",
-    "content": "# Getting Started with Modern Web Development\n\nModern web development has evolved significantly over the past few years. With the introduction of new frameworks, tools, and best practices, developers now have more options than ever to build fast, scalable, and maintainable applications.\n\n## The Modern Stack\n\nToday's web development ecosystem is rich with powerful tools:\n\n- **React** for building interactive user interfaces\n- **TypeScript** for type-safe JavaScript\n- **Vite** for lightning-fast development\n- **Tailwind CSS** for utility-first styling\n\n## Best Practices\n\nWhen building modern web applications, consider these key principles:\n\n1. **Component-based architecture**: Break your UI into reusable components\n2. **Type safety**: Use TypeScript to catch errors early\n3. **Performance optimization**: Lazy load components and optimize bundle size\n4. **Accessibility**: Ensure your app is usable by everyone\n\n## Conclusion\n\nThe web development landscape continues to evolve, but focusing on fundamentals and best practices will help you build better applications regardless of the tools you choose.",
-    "date": "2024-12-01",
-    "author": "Alex Johnson",
+    "id": "introducing-inkctf",
+    "title": "ink!CTF",
+    "excerpt": "A Capture-The-Flag platform for ink! smart contract security. Break real contracts. Learn why they broke.",
+    "content": "# ink!CTF\n\n![ink!CTF Hero](/images/inkctf-hero.png)\n\nThere is no shortage of articles explaining smart contract vulnerabilities. Reentrancy. Access control. Storage visibility. You can read about all of them. Understand them conceptually. Nod along.\n\nAnd then deploy a contract with the exact same mistake.\n\nReading about vulnerabilities does not build intuition. Exploiting them does.\n\n## Why This Exists\n\nEthereum has [ethernaut](https://ethernaut.openzeppelin.com/). A series of increasingly difficult smart contracts that you must hack to progress. Each level isolates a specific vulnerability class. You learn not by reading about reentrancy, but by draining a contract yourself.\n\nThe Polkadot ecosystem has nothing like this for ink! contracts. And ink! is different enough from Solidity that the security model diverges in meaningful ways. The storage layout is different. The execution model is different. Cross-contract calls work differently. You cannot simply port Ethernaut's lessons and call it done.\n\nSo we built [ink!CTF](https://ctfs.ink) — a Capture-The-Flag platform for ink! smart contract security on Paseo Asset Hub testnet. You connect a wallet. You get a personal contract instance. You study the source code. You open your browser console. And you break it.\n\n## The Levels\n\nSix levels, each isolating a vulnerability class that has cost real money on real networks.\n\n**Instance** — The developer left a public getter on a contract that authenticates with a password. You call it, read the password, authenticate. It sounds trivial. It is trivial. That is why it keeps happening in production.\n\n**Fallback** — The intended path to ownership requires a thousand transactions. But the fallback function has a shortcut that the developer did not intend to be an entry point. Every code path to a privileged operation is an attack surface.\n\n**Re-entrancy** — The classic. A donation contract that transfers funds before updating balances. In Solidity, this is the DAO hack. In ink!, the pattern is the same but the mechanics differ. You learn Checks-Effects-Interactions not as a mantra but as something you need to get right to drain the contract.\n\n**Coin Flip** — A \"random\" coin flip that uses the block number as its entropy source. Block numbers are sequential and public. Win 10 in a row to complete the level. There is no randomness on a deterministic blockchain without external oracles.\n\n**King** — A throne game where the previous king gets paid when someone sends more value. Deploy a contract that rejects all transfers, become king, and nobody can dethrone you because paying you always fails. Never assume external calls succeed.\n\n**Vault** — A contract with a \"hidden\" password and no getter function. The developer believes omitting a getter makes the data private. It does not. All blockchain storage is publicly readable. The `private` keyword controls code-level visibility, not data-level privacy.\n\n## How You Play\n\n![Console Gameplay](/images/inkctf-console.png)\n\nConnect a Polkadot wallet. Get some PAS from the testnet faucet. Pick a level.\n\nEach level gives you the full contract source code and deploys a personal instance just for you. The browser console is your weapon — the platform injects helper functions so you can call contract methods, send transactions, and inspect state directly from devtools.\n\nWhen you think you have exploited the contract, submit your instance. The validation is on-chain. Either you broke the contract or you did not. No self-reported completions.\n\n## Why This Matters\n\nThe Polkadot ecosystem is growing. ink! contracts are being deployed to production parachains. DeFi protocols, governance systems, and identity solutions are being built with ink!.\n\nEvery vulnerability in ink!CTF has a real-world analog. The DAO hack. The Parity wallet freeze. The King of the Ether lockout. These are not theoretical risks.\n\nWe would rather you learn this by draining a testnet contract than by losing funds on mainnet.\n\n---\n\n> [ink!CTF](https://ctfs.ink) is live on Paseo Asset Hub testnet. Connect a wallet, get some PAS from the faucet, and start breaking things.",
+    "date": "2026.02.03",
+    "author": "Anonymous",
     "readTime": "5 min read",
-    "category": "Development",
-    "tags": [
-      "web development",
-      "react",
-      "typescript"
-    ]
-  },
-  {
-    "id": "the-art-of-clean-code",
-    "title": "The Art of Clean Code",
-    "excerpt": "Learn how to write maintainable, readable code that your future self and teammates will thank you for.",
-    "content": "# The Art of Clean Code\n\nWriting clean code is an art that every developer should master. Clean code is not just about making your code work—it's about making it readable, maintainable, and elegant.\n\n## Why Clean Code Matters\n\nClean code has several benefits:\n\n- **Easier to understand**: Other developers (and future you) can quickly grasp what the code does\n- **Easier to maintain**: Making changes becomes less risky and time-consuming\n- **Fewer bugs**: Clear code is less prone to errors\n- **Better collaboration**: Teams work more efficiently with clean codebases\n\n## Key Principles\n\n### 1. Meaningful Names\n\nChoose descriptive names for variables, functions, and classes:\n\n```typescript\n// Bad\nconst d = new Date();\n\n// Good\nconst currentDate = new Date();\n```\n\n### 2. Small Functions\n\nKeep functions focused on a single task:\n\n```typescript\n// Each function does one thing well\nfunction validateEmail(email: string): boolean { ... }\nfunction sendEmail(to: string, subject: string): void { ... }\n```\n\n### 3. DRY Principle\n\nDon't Repeat Yourself—extract common logic into reusable functions.\n\n## Conclusion\n\nClean code is a journey, not a destination. Continuously refactor and improve your code as you learn new patterns and best practices.",
-    "date": "2024-11-28",
-    "author": "Sarah Chen",
-    "readTime": "7 min read",
-    "category": "Best Practices",
-    "tags": [
-      "clean code",
-      "programming",
-      "best practices"
-    ]
+    "category": "Uncategorized",
+    "tags": []
   }
 ];
 

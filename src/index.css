@@ -1,15 +1,243 @@
 @import "tailwindcss";
-@import "highlight.js/styles/atom-one-dark.css";
+@variant dark (&:where(.dark, .dark *));
+
+/* Light Theme (GitHub) */
+.hljs {
+  color: #24292e;
+  background: transparent; /* Handled by pre */
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  color: #d73a49;
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  color: #6f42c1;
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  color: #005cc5;
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  color: #032f62;
+}
+.hljs-built_in,
+.hljs-symbol {
+  color: #e36209;
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  color: #6a737d;
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  color: #22863a;
+}
+.hljs-subst {
+  color: #24292e;
+}
+.hljs-section {
+  color: #005cc5;
+  font-weight: bold;
+}
+.hljs-bullet {
+  color: #735c0f;
+}
+.hljs-emphasis {
+  color: #24292e;
+  font-style: italic;
+}
+.hljs-strong {
+  color: #24292e;
+  font-weight: bold;
+}
+.hljs-addition {
+  color: #22863a;
+  background-color: #f0fff4;
+}
+.hljs-deletion {
+  color: #b31d28;
+  background-color: #ffeef0;
+}
+
+/* Dark Theme (GitHub Dark) */
+.dark .hljs {
+  color: #e5e5e5;
+  background: transparent; /* Handled by pre */
+}
+.dark .hljs-doctag,
+.dark .hljs-keyword,
+.dark .hljs-meta .hljs-keyword,
+.dark .hljs-template-tag,
+.dark .hljs-template-variable,
+.dark .hljs-type,
+.dark .hljs-variable.language_ {
+  color: #ff7b72;
+}
+.dark .hljs-title,
+.dark .hljs-title.class_,
+.dark .hljs-title.class_.inherited__,
+.dark .hljs-title.function_ {
+  color: #d2a8ff;
+}
+.dark .hljs-attr,
+.dark .hljs-attribute,
+.dark .hljs-literal,
+.dark .hljs-meta,
+.dark .hljs-number,
+.dark .hljs-operator,
+.dark .hljs-variable,
+.dark .hljs-selector-attr,
+.dark .hljs-selector-class,
+.dark .hljs-selector-id {
+  color: #79c0ff;
+}
+.dark .hljs-regexp,
+.dark .hljs-string,
+.dark .hljs-meta .hljs-string {
+  color: #a5d6ff;
+}
+.dark .hljs-built_in,
+.dark .hljs-symbol {
+  color: #ffa657;
+}
+.dark .hljs-comment,
+.dark .hljs-code,
+.dark .hljs-formula {
+  color: #525252;
+}
+.dark .hljs-name,
+.dark .hljs-quote,
+.dark .hljs-selector-tag,
+.dark .hljs-selector-pseudo {
+  color: #7ee787;
+}
+.dark .hljs-subst {
+  color: #e5e5e5;
+}
+.dark .hljs-section {
+  color: #1f6feb;
+  font-weight: bold;
+}
+.dark .hljs-bullet {
+  color: #f2cc60;
+}
+.dark .hljs-emphasis {
+  color: #e5e5e5;
+  font-style: italic;
+}
+.dark .hljs-strong {
+  color: #e5e5e5;
+  font-weight: bold;
+}
+.dark .hljs-addition {
+  color: #aff5b4;
+  background-color: #033a16;
+}
+.dark .hljs-deletion {
+  color: #ffdcd7;
+  background-color: #67060c;
+}
 
 @theme {
-  --font-family-mono: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", monospace;
-  
-  --color-terminal-bg: #1a1a1a;
-  --color-terminal-fg: #e0e0e0;
-  --color-terminal-muted: #888888;
-  --color-terminal-border: #333333;
-  --color-terminal-hover: #2a2a2a;
-  --color-terminal-accent: #ffffff;
+  --color-rurikon-50: #fafafa;
+  --color-rurikon-100: #e5e5e5;
+  --color-rurikon-200: #d4d4d4;
+  --color-rurikon-300: #a1a1a1;
+  --color-rurikon-400: #737373;
+  --color-rurikon-500: #404040;
+  --color-rurikon-600: #262626;
+  --color-rurikon-700: #171717;
+  --color-rurikon-800: #0a0a0a;
+  --color-rurikon-900: #050505;
+  --color-rurikon-950: #000000;
+
+  --color-rurikon-border: #e5e5e5;
+
+  --breakpoint-text: 1220px;
+  --breakpoint-mobile: 420px;
+
+  --font-sans: 'InterVariable', -apple-system, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'LoraItalicVariable', ui-serif, Georgia, serif;
+  --font-mono: 'IosevkaFixedCurly', ui-monospace, monospace;
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+
+    --code-bg: #f6f8fa;
+    --code-border: #d0d7de;
+    --code-inline-bg: #f6f8fa;
+  }
+
+  .dark {
+    --background: #000000;
+    --foreground: #a1a1a1;
+
+    --code-bg: #0a0a0a;
+    --code-border: #262626;
+    --code-inline-bg: #0a0a0a;
+
+    --color-rurikon-50: #0a0a0a;
+    --color-rurikon-100: #333333;
+    --color-rurikon-200: #666666;
+    --color-rurikon-300: #888888;
+    --color-rurikon-400: #999999;
+    --color-rurikon-500: #a1a1a1;
+    --color-rurikon-600: #ededed;
+    --color-rurikon-700: #fafafa;
+    --color-rurikon-800: #ffffff;
+    --color-rurikon-900: #ffffff;
+    --color-rurikon-950: #ffffff;
+
+    --color-rurikon-border: #262626;
+  }
+}
+
+@font-face {
+  font-family: 'InterVariable';
+  src: url('/fonts/InterVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LoraItalicVariable';
+  src: url('/fonts/LoraItalicVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'IosevkaFixedCurly';
+  src: url('/fonts/IosevkaFixedCurly-ExtendedMedium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
 }
 
 @layer base {
@@ -18,43 +246,122 @@
   }
   
   body {
-    @apply bg-terminal-bg text-terminal-fg font-mono text-sm leading-relaxed;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-variation-settings: 'wght' 440, 'opsz' 32;
+    transition: background-color 0.3s, color 0.3s;
   }
   
-  a {
-    @apply text-terminal-fg no-underline transition-colors duration-200;
+  .font-serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
   }
-  
-  a:hover {
-    @apply text-terminal-accent;
-  }
+}
+
+/* Blog content styling - match About page exactly */
+.blog-content {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--foreground);
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+  color: var(--foreground);
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  color: var(--foreground);
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.blog-content h1 {
+  font-size: 1.25rem;
+}
+
+.blog-content h2 {
+  font-size: 1.125rem;
+}
+
+.blog-content h3 {
+  font-size: 1rem;
+}
+
+.blog-content strong {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
 }
 
 /* Code block styling */
-.blog-content pre {
-  background-color: var(--color-terminal-hover) !important;
-  border: 1px solid var(--color-terminal-border);
-  border-radius: 4px;
-  padding: 16px;
+.blog-pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 6px;
+  contain: paint;
   overflow-x: auto;
-  margin: 16px 0;
+  padding: 0.875rem 1.25rem;
+  -webkit-font-smoothing: auto;
+  margin: 1.75rem 0;
 }
 
 .blog-content code {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-mono);
   font-size: 13px;
 }
 
-.blog-content pre code {
+.blog-pre code {
   background: transparent !important;
   padding: 0 !important;
+  font-family: var(--font-mono);
+  font-size: 13px;
 }
 
 .blog-content :not(pre) > code {
-  background-color: var(--color-terminal-hover);
+  background-color: var(--code-inline-bg);
   padding: 2px 6px;
   border-radius: 3px;
-  border: 1px solid var(--color-terminal-border);
+  border: 1px solid var(--code-border);
+}
+
+.content-fade-out {
+  background: linear-gradient(180deg,  hsla(0, 0%, 100%, 1.00) 0%,  hsla(0, 0%, 100%, 0.63) 14%,  hsla(0, 0%, 100%, 0.36) 29%,  hsla(0, 0%, 100%, 0.19) 43%,  hsla(0, 0%, 100%, 0.08) 57%,  hsla(0, 0%, 100%, 0.02) 71%,  hsla(0, 0%, 100%, 0.00) 86%,  hsla(0, 0%, 100%, 0.00) 100%);
+}
+
+.dark .content-fade-out {
+  background: linear-gradient(180deg,  hsla(0, 0%, 0%, 1.00) 0%,  hsla(0, 0%, 0%, 0.63) 14%,  hsla(0, 0%, 0%, 0.36) 29%,  hsla(0, 0%, 0%, 0.19) 43%,  hsla(0, 0%, 0%, 0.08) 57%,  hsla(0, 0%, 0%, 0.02) 71%,  hsla(0, 0%, 0%, 0.00) 86%,  hsla(0, 0%, 0%, 0.00) 100%);
+}
+
+.dot-leaders {
+  text-align: end;
+  height: 1em;
+  overflow: hidden;
+  word-wrap: break-word;
+  letter-spacing: 6px;
+}
+
+.dot-leaders::after {
+  content: '······································································';
 }
