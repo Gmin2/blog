@@ -40,7 +40,7 @@ Six levels, each isolating a vulnerability class that has cost real money on rea
 
 ## How You Play
 
-![alt text](./images/inkctf-game.png)
+![alt text](/images/inkctf-game.png)
 
 Connect a Polkadot wallet. Get some PAS from the testnet faucet. Pick a level.
 
